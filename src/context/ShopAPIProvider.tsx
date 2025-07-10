@@ -6,7 +6,7 @@ const ShopAPIContext = createContext();
 
 export const ShopAPIProvider = ({ children }) => {
     // const api_address = `https://yn-corp.xyz/api/shop`;
-    const api_address = `http://${process.env.REACT_APP_API_CONTACT_POINTS}:${process.env.REACT_APP_API_PORT}/api/shop`;
+    const api_address = `https://${process.env.REACT_APP_API_CONTACT_POINTS}:${process.env.REACT_APP_API_PORT}/api/shop`;
     const config = {withCredentials: true, headers: {'Content-Type':'application/json', 'Accept':'application/json'}};
 
     const fetchBasket = async () => { // Fonction pour récupérer le panier
@@ -30,6 +30,8 @@ export const ShopAPIProvider = ({ children }) => {
             await axios.get(`${api_address}/connect`, config);
             const res = await axios.get(`${api_address}/item?id=${item}`, config);
             if (res.data.length === 1) res.data = res.data[0];
+
+            res.data.image = `data:image/jpeg;base64,${res.data.image}`;
             return res.data;
         } catch (e) { console.error('[fetchItem]', e); }
     };

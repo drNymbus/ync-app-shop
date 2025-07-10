@@ -8,6 +8,7 @@
     "starter"
   ],
   "main": "src/index.tsx",
+  "homepage": "/shop",
   "dependencies": {
     "@paypal/react-paypal-js": "^8.3.0",
     "axios": "^1.6.8",

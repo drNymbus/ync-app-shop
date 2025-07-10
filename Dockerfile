@@ -8,6 +8,8 @@ COPY tsconfig.json ./
 COPY src ./src
 COPY public ./public
 
+COPY serve.js ./serve.js
+
 COPY start.sh ./start.sh
 RUN chmod +x start.sh
 
