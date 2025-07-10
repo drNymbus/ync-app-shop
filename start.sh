@@ -9,6 +9,7 @@ echo "installing..."
 # If you are building your code for production in CI/CD
 # https://stackoverflow.com/questions/52499617/what-is-the-difference-between-npm-install-and-npm-ci
 npm ci --omit=dev
+npm i express
 
 echo "run build..."
 npm run build
