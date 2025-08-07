@@ -1,11 +1,13 @@
 import { useState, useContext } from 'react';
 
-import Section from './Section';
-import ShopAPIContext from "../context/ShopAPIProvider";
-import PaymentForm from './aux_payment/PaymentForm';
-import PaymentSummary from './aux_payment/PaymentSummary';
-import useValidators from './aux_payment/useValidators';
-import paypalPayment from './aux_payment/Paypal';
+import Section from '../../shared/components/Section';
+import ShopAPIContext from "../../shared/context/ShopAPIProvider";
+import PaymentForm from './PaymentForm';
+import PaymentSummary from './PaymentSummary';
+import useValidators from '../../shared/hook/useValidators';
+import paypalPayment from './PaymentMethod/Paypal';
+
+import './index.css';
 
 function Payment({ basket, onFailure, onSuccess }) {
     const { fetchOrder, postOrder, captureOrder, postMailing } = useContext(ShopAPIContext);
@@ -70,7 +72,7 @@ function Payment({ basket, onFailure, onSuccess }) {
         await postOrder({...order, items:basket})
             .then(data => {
                 console.log('postOrder', data);
-                if (data.error) {
+                if (data && data.error) {
                     setStatus({
                         event: "Trop lent :(",
                         description: "On s'est fait dévaliser broski... Certains articles dans ton panier ne sont plus disponible."
@@ -81,6 +83,52 @@ function Payment({ basket, onFailure, onSuccess }) {
                         event: 'Vous payez par carte ?',
                         description: "Non, je rigole. Qui a encore de l'espèce de nos jours ? Attend un peu, tu devrais voir la page de paiement apparaître sous peu."
                     });
+                    paypalPayment(setStatus, data, fetchOrder, captureOrder)
+                        .then(result => {
+                            captureOrder({...order, id: data.id, uuid: data.uuid})
+                                .then(result => {
+                                    if (result.status === 'COMPLETED') {
+                                        proceed = true;
+                                        setStatus({
+                                            event: "On est tout bon :D",
+                                            description: "Excellent, tout s'est bien passé ? Merci, à la prochaine! Ciao, ciao."
+                                        });
+                                    } else if (result.status === 'PENDING') {
+                                        if (result.reason === '') {
+                                        } else if (result.reason === '') {
+                                        } else {
+                                            proceed = false;
+                                            setStatus({
+                                                event: "Mince... On fait quoi ?",
+                                                description: "",
+                                                failure: true
+                                            });
+                                        }
+                                    } else {
+                                        proceed = false;
+                                        setStatus({
+                                            event: "Trop relou, trop relou",
+                                            description: "Désolé mais Paypal n'a pas validé ton paiement, ça peut aussi être aussi un erreure de notre part. Tu peux nous contacter si tu as le moindre soucis (sauf si tu viens de perdre ton chien. On compatis mais on peut pas trop t'aider là...).",
+                                            failure: true
+                                        });
+                                    }
+                                })
+                                .catch(e => {
+                                    proceed = false;
+                                    setStatus({
+                                        event: "Il s'est passé quoi ?",
+                                        description: "On a eu un soucis avec notre serveur (mais entre nous on sait que ça peu uniquement venir de Paypal ;)). Retente de passer la commande, si tu l'ose !",
+                                        failure: true
+                                    });
+                                });
+                        })
+                        .catch(e => {
+                            console.error(`[Payment;time2pay;paypalPayment] ${e}`)
+                            setStatus({
+                                event: 'Erreur de paiement',
+                                description: "Une erreur est survenue avec Paypal. Si tu as été prélevé, ce n'est pas garanti qu'on puisse t'aider mais on va tout faire pour. N'hésite pas à nous contacter."
+                            });
+                        });
                 }
             })
             .catch(e => {
@@ -91,6 +139,7 @@ function Payment({ basket, onFailure, onSuccess }) {
                 });
             });
 
+        /*
         if (proceed) {
             paypalPayment(setStatus, data, fetchOrder, captureOrder)
                 .then(result => {
@@ -139,6 +188,7 @@ function Payment({ basket, onFailure, onSuccess }) {
                     });
                 });
         }
+        */
 
         if (proceed) onSuccess();
     }

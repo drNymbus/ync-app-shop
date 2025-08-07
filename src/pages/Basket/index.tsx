@@ -1,6 +1,8 @@
 import {useContext, useEffect, useState, useCallback } from "react";
-import ShopAPIContext from "../context/ShopAPIProvider";
-import Section from './Section';
+import ShopAPIContext from "../../shared/context/ShopAPIProvider";
+import Section from '../../shared/components/Section';
+
+import './index.css';
 
 function BasketArticle({ item, size, quantity, max_qtty, compact, add, rm, del }) {
     useEffect(() => {}, [max_qtty]);

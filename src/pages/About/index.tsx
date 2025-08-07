@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import './index.css';
+
 function About() {
     const [info, setInfo] = useState({
         delivery: false,

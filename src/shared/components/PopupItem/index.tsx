@@ -1,6 +1,8 @@
 import { useState, useId } from 'react';
 import Section from './Section';
 
+import './index.css';
+
 function FoldoutSection({ title, content }) {
     const [display, setDisplay] = useState(false);
     const handleDisplay = () => { setDisplay(!display); };

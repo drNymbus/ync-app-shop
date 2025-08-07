@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { make, register } from 'simple-body-validator';
-import useValidators from './useValidators';
+import useValidators from '../../../shared/hook/useValidators';
 
 function PaymentForm({ order, setOrderField, errors, setErrorsField }) {
     const [suggestions, setSuggestions] = useState([]);

@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import ShopAPIContext from "../context/ShopAPIProvider";
+import ShopAPIContext from "../../context/ShopAPIProvider";
 import Section from "./Section";
+
+import './index.css';
 
 function Vitrine({ id, add, goto }) {
     const [item, setItem] = useState(null);

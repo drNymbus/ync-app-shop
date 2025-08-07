@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import ShopAPIContext from "../../context/ShopAPIProvider";
+import ShopAPIContext from "../../../shared/context/ShopAPIProvider";
 
 function PaymentItem({ item, size, quantity }) {
     return (<div className="payment-product">

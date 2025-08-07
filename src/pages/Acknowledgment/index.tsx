@@ -1,5 +1,5 @@
 import {useContext, useEffect, useState, useRef } from "react";
-import Section from './Section';
+import Section from '../../shared/components/Section';
 
 function Acknowledgment() {
     return (<>

@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState, forwardRef } from "react";
-import ShopAPIContext from "../context/ShopAPIProvider";
+import ShopAPIContext from "../../context/ShopAPIProvider";
 import Section from "./Section";
+
+import './index.css';
 
 function GalleryItem({ id, onItemClick }) {
     const { fetchItem } = useContext(ShopAPIContext);
@@ -33,7 +35,7 @@ function GalleryPage({ ids, onItemClick }, ref) {
         <div className="gallery" ref={ref}>
             <div className="gallery-container">
                 <div className="gallery-thumbnails">
-                    {ids.map(id => <GalleryItem id={id} onItemClick={onItemClick} />)}
+                    {ids.map(id => <GalleryItem key={id} id={id} onItemClick={onItemClick} />)}
                 </div>
             </div>
             <div className="gallery-logo">
