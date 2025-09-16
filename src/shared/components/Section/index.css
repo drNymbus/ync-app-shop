@@ -1,0 +1,11 @@
+.section {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	height: calc(var(--screen-height) * 5/100);
+	margin: 50px;
+}
+
+.section p {
+	margin: 20px;
+}

@@ -1,0 +1,26 @@
+.header {
+	position: fixed;
+	width: 100vw;
+}
+
+.header-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	height: calc(var(--screen-height) * 5/100);
+	background: var(--grey);
+}
+
+.header-wrapper button {
+	border: none;
+	background: none;
+}
+
+.header-wrapper.home {
+	margin-right: auto;
+}
+
+.header-wrapper.basket {
+	color: var(--purple);
+}
