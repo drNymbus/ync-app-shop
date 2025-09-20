@@ -3,7 +3,8 @@ import { useState, useContext } from 'react';
 import Section from '../../shared/components/Section';
 import ShopAPIContext from "../../shared/context/ShopAPIProvider";
 import PaymentForm from './PaymentForm';
-import PaymentSummary from './PaymentSummary';
+// import PaymentSummary from './PaymentSummary';
+import Summary from '../../shared/components/Summary';
 import useValidators from '../../shared/hook/useValidators';
 import paypalPayment from './PaymentMethod/Paypal';
 
@@ -196,7 +197,8 @@ function Payment({ basket, onFailure, onSuccess }) {
     return (<>
         <div className="payment">
             <PaymentForm order={order} setOrderField={setOrderField} errors={errors} setErrorsField={setErrorsField}/>
-            <PaymentSummary basket={basket} payment={time2pay}/>
+            {/*<PaymentSummary basket={basket} payment={time2pay}/>*/}
+            <Summary basket={basket} next={time2pay} detailed={true} />
         </div>
         {status && <div className="payment-status">
             <h1>{status.event}</h1>

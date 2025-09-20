@@ -1,0 +1,97 @@
+/* ================================
+    ORDER SUMMARY : .order-summary
+================================ */
+.order-summary {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 420px;
+    height: 296px;
+    margin-left: 12px;
+    border: 1px solid #000;
+}
+
+/* Titre */
+.order-summary .title {
+    background-color: #000;
+    color: white;
+    padding: 8px 11px;
+    font-size: 19px;
+    font-weight: 200;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/* Details */
+.order-summary .details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px 5px 20px;
+    font-size: 18.25px;
+    height: 167px;
+}
+
+.amount-row{
+    margin-top: 16px;
+}
+
+.amount-row, .delivery-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    font-size: 18.25px;
+    text-align: left;
+}
+  
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* Prix */
+.value {
+    font-size: 19px;
+    font-weight: 500;
+    color: #c14bff;
+}
+  
+.total-value {
+    font-size: 26px;
+    font-weight: 400;
+    color: #c14bff;
+}
+
+/* ================================
+    BOUTON PASSER A LA SUITE : .order-button
+================================ */
+.order-button {
+    width: 100.5%;
+    height: 78px;
+    padding: 21px 12px;
+    position: relative;
+    left: -1px;
+    background-color: white;
+    color: #c14bff;
+    border: 1px solid #c14bff;
+    text-align: center;
+    font-size: 13.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+  
+.order-button:hover {
+    background-color: #c14bff;
+    color: white;
+}
+
+

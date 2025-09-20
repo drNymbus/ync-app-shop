@@ -1,6 +1,7 @@
-import {useContext, useEffect, useState, useCallback } from "react";
+import { useContext, useEffect, useState, useCallback } from "react";
 import ShopAPIContext from "../../shared/context/ShopAPIProvider";
 import Section from '../../shared/components/Section';
+import Summary from '../../shared/components/Summary';
 
 import './index.css';
 
@@ -24,6 +25,7 @@ function BasketArticle({ item, size, quantity, max_qtty, compact, add, rm, del }
                 {/* INFOS */}
                 <div className="article-information">
 
+                    <img className="article-image" src={(!item) ? "" : item.images[0]}/>
                     <h3 className="article-title">{(!item) ? "?" : item.title} (<b>{size}</b>)</h3>
                     <p className="article-delivery-description">{(!item) ? "?" : item.basket_description}</p>
 
@@ -83,63 +85,6 @@ function BasketItem({ basket, id, compact, add, rm, del }) {
     </>);
 }
 
-function BasketPrice({ basket, compact, next }) {
-
-    const { fetchItem } = useContext(ShopAPIContext);
-    const [price, setPrice] = useState({amount: 0, fee: 0});
-
-    useEffect(() => {
-
-        let new_fee = 0, new_amount = 0;
-
-        for (const item in basket) {
-
-            fetchItem(item).then((data) => {
-                for (const size in basket[item]) {
-                    new_fee += .01 * basket[item][size];
-                    new_amount += basket[item][size] * parseFloat(data.price);
-                    setPrice(p => ({...p, amount: new_amount, fee: new_fee}));
-                }
-            }).catch(e => console.error(`[BasketPrice;useEffect] ${e.message}`));
-
-        }
-
-    }, [basket]);
-
-    return (
-
-        <div className="order-summary">
-
-            {/* TITLE */}
-            <div className="title">ORDER SUMMARY</div>
-
-            {/* DETAILS */}
-            <div className="details">
-
-                <div className="amount-row">
-                    <div className="label">Montant</div>
-                    <div className="value">{(price.amount).toFixed(2)} €</div>
-                </div>
-
-                <div className="delivery-row">
-                    <div className="label">Livraison</div>
-                    <div className="value">{(price.fee).toFixed(2)} €</div>
-                </div>
-
-                <div className="total-row">
-                    <div className="label">TOTAL</div>
-                    <div className="total-value">{(price.amount + price.fee).toFixed(2)} €</div>
-                </div>
-
-            </div>
-
-            {/* BUTTON */}
-            {!compact && (<button className="order-button" onClick={next}>JE PASSE À LA SUITE</button>)}
-
-        </div>
-      );
-}
-
 
 /* @desc: This component is used to display all items currently in the basket and all pricing informations
  * @param basket: a list of all items in the basket
@@ -168,7 +113,7 @@ function Basket({ basket, compact=true, add=undefined, rm=undefined, del=undefin
                 </div>
 
                 {/* ORDER SUMMARY */}
-                <BasketPrice basket={basket} compact={compact} next={next}/>
+                <Summary basket={basket} detailed={false} next={next}/>
 
             </div>)}
 
