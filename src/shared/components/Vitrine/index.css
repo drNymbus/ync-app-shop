@@ -19,29 +19,28 @@
     height: var(--content-height);
     background: var(--white);
     margin-top: var(--margin-height);
-    /* NEW: ensure clipping hides content cleanly */
-    visibility: hidden;
 }
 
 /* NEW: clip-path reveal animation */
-@keyframes showcase-reveal-down {
+/* @keyframes showcase-reveal-down {
     0% {
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
     100% {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
-}
+} */
 
 /* NEW: state before image is loaded (fully clipped at top) */
 .pending {
-    visibility: hidden;
+    opacity: 0;
 }
 
 /* NEW: state after image is loaded — animate to full reveal */
 .revealed {
-    visibility: visible;
-    animation: showcase-reveal-down var(--transition-slow) ease-out forwards;
+    /* animation: showcase-reveal-down var(--transition-slow) ease-out forwards; */
+    animation: fadeInUpApp 3s ease both;
+    animation-delay: 1s;
 }
 
 /* ================================
@@ -141,7 +140,7 @@
 .arrow {
     position: absolute;
     top: 90%;
-    left: 50%;
+    left: 95%;
     transform: translate(-50%, -50%);
     opacity: 0.1;
     cursor: pointer;
@@ -149,8 +148,8 @@
 
 .arrow span {
     display: block;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 1vw;
+    height: 1vw;
     border-bottom: 5px solid var(--primary-color);
     border-right: 5px solid var(--primary-color);
     transform: rotate(45deg);
@@ -210,5 +209,10 @@
         width: 100%;
         margin-top: 20px;
         margin-left: 0;
+    }
+
+    .arrow {
+        top: 93%;
+        left: 50%;
     }
 }

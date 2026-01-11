@@ -24,8 +24,9 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    animation: fadeInUpApp 1.9s ease both;
-    animation-delay: 3s;
+    animation: fadeInUpApp var(--transition-slow) both;
+    animation-delay: var(--content-reveal);
+
 }
 
 .header button {
@@ -34,9 +35,9 @@
     height: calc(var(--header-height) * 0.75);
     border: none;
     background: none;
+    font-family: var(--font-family);
     font-size: var(--font-size-header);
     transition: var(--transition-fast);
-    font-family: var(--font-family);
     cursor: pointer;
 }
 

@@ -164,7 +164,7 @@ function App() {
                 <button onClick={() => setGone(false)}>OK</button>
             </div>}
 
-            <Footer onClick={aboutState}/>
+            {(state == "HOME") && <Footer onClick={aboutState}/>}
 
         </div>
     );

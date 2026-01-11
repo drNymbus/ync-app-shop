@@ -3,14 +3,14 @@
   ================================ */
   .footer {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
   .footer img {
     margin-top: var(--spacing-lg);
-    height: var(--spacing-xl);
+    height: calc(var(--header-height) * 2);
     overflow: hidden;
   }
   

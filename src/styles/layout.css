@@ -8,6 +8,10 @@
     flex-direction: column;
     width: var(--screen-width);
     min-height: var(--screen-height);
+
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--font-color);
 }
 
 /* Content Area - Standardized spacing from header/section */
@@ -27,4 +31,14 @@
 /* Section Spacing Helper */
 .section-spacing {
     margin-top: var(--margin-height);
+}
+
+.blank {
+    height: calc(var(--content-height) * 0.25);
+}
+
+@media (max-width: 768px) {
+    .App {
+        font-size: var(--font-size-sm);
+    }
 }

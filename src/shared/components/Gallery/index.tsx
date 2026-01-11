@@ -32,11 +32,15 @@ function GalleryItem({ id, onItemClick }) {
 }
 
 function GalleryPage({ ids, onItemClick }, ref) {
-    return (
+    return (<>
+        <div className="gallery-space">
+            <p>L’univers est en expansion,</p>
+            <p>nous aussi</p>
+        </div>
         <div className="gallery" ref={ref}>
             {ids.map(id => <GalleryItem key={id} id={id} onItemClick={onItemClick} />)}
         </div>
-    );
+    </>);
 }
 
 const Gallery = forwardRef(GalleryPage);

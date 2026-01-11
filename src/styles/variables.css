@@ -8,14 +8,15 @@
     --screen-height: 100vh;
     
     /* === LAYOUT === */
-    --header-height: 5vh;
-    --section-height: 7vh;
+    --header-height: 7vh;
+    --section-height: 10vh;
     --margin-height: calc(var(--header-height) + var(--section-height));
     --content-height: calc(100vh - var(--margin-height));
     
     --header-width: 100vw;
     --section-width: 100vw;
     --content-width: 100vw;
+    --margin-width: calc(var(--header-width) / 6);
     
     /* === SPACING SYSTEM === */
     --spacing-xs: 0.5vh;
@@ -71,6 +72,7 @@
     --transition-fast: 0.1s ease;
     --transition-standard: 0.3s ease;
     --transition-slow: 2s ease;
+    --content-reveal: 3s;
     
     /* === GALLERY SPECIFIC === */
     --gallery-columns: 4;
@@ -90,4 +92,12 @@
     --z-index-header: 100;
     --z-index-popup: 8999;
     --z-index-popup-overlay: 10000;
+}
+
+@font-face {
+    font-family: "Necto Mono";
+    src: url("https://raw.githubusercontent.com/collletttivo/necto-mono/main/fonts/NectoMono-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Helps with loading performance */
 }
