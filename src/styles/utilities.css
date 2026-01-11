@@ -1,0 +1,62 @@
+/* ================================
+    UTILITY CLASSES
+================================ */
+
+/* === FLEXBOX UTILITIES === */
+
+/* Centrer enfants en colonne */
+.element-centred-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centrer enfants en ligne */
+.element-centred-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Alignement alterné gauche-droite */
+.element-item-bordered-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.element-item-bordered-left > :nth-child(odd) {
+    margin-right: auto;
+}
+
+.element-item-bordered-left > :nth-child(even) {
+    margin-left: auto;
+}
+
+/* Alignement alterné droite-gauche */
+.element-item-bordered-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.element-item-bordered-right > :nth-child(odd) {
+    margin-left: auto;
+}
+
+.element-item-bordered-right > :nth-child(even) {
+    margin-right: auto;
+}
+
+/* === ANIMATIONS === */
+
+@keyframes fadeInUpApp {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

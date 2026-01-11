@@ -1,0 +1,30 @@
+/* ================================
+    LAYOUT UTILITIES
+================================ */
+
+/* Main App Container */
+.App {
+    display: flex;
+    flex-direction: column;
+    width: var(--screen-width);
+    min-height: var(--screen-height);
+}
+
+/* Content Area - Standardized spacing from header/section */
+.content-area {
+    position: relative;
+    width: var(--content-width);
+    min-height: var(--content-height);
+    margin-top: var(--margin-height);
+}
+
+/* Page Container - Standardized padding for pages */
+.page-container {
+    width: 100%;
+    padding: var(--spacing-md) var(--container-padding);
+}
+
+/* Section Spacing Helper */
+.section-spacing {
+    margin-top: var(--margin-height);
+}

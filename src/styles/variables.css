@@ -1,0 +1,93 @@
+/* ================================
+    CSS VARIABLES - SINGLE SOURCE OF TRUTH
+================================ */
+
+:root {
+    /* === VIEWPORT === */
+    --screen-width: 100vw;
+    --screen-height: 100vh;
+    
+    /* === LAYOUT === */
+    --header-height: 5vh;
+    --section-height: 7vh;
+    --margin-height: calc(var(--header-height) + var(--section-height));
+    --content-height: calc(100vh - var(--margin-height));
+    
+    --header-width: 100vw;
+    --section-width: 100vw;
+    --content-width: 100vw;
+    
+    /* === SPACING SYSTEM === */
+    --spacing-xs: 0.5vh;
+    --spacing-sm: 1vh;
+    --spacing-md: 2vh;
+    --spacing-lg: 10vh;
+    --spacing-xl: 20vh;
+    
+    /* === CONTAINER SPACING === */
+    --container-margin-x: 2vw;
+    --container-padding: 1vw;
+    
+    /* === TYPOGRAPHY === */
+    --font-family: "Necto Mono";
+    --font-color: #0d0d0d;
+    --font-color-secondary: #333333;
+    
+    /* Font Sizes */
+    --font-size-xs: clamp(10px, 0.8vw, 12px);
+    --font-size-sm: clamp(14px, 1vw, 18px);
+    --font-size-md: clamp(18px, 1.5vw, 32px);
+    --font-size-lg: clamp(24px, 2.5vw, 48px);
+    
+    /* Specific Font Sizes (legacy support) */
+    --font-size-header: var(--font-size-sm);
+    --font-size-section: clamp(20px, 2vw, 42px);
+    --font-size-content: var(--font-size-sm);
+    --font-size-title-content: var(--font-size-lg);
+    --font-size-subtitle-content: var(--font-size-md);
+    --font-size-note: var(--font-size-md);
+    
+    /* === COLORS === */
+    --primary-color: #c14bff;
+    --primary-color-dark: #a03dcc;
+    --primary-color-hover: #8f38be;
+    
+    --background-color: #f8f8f8;
+    --background-secondary: #dededec8;
+    --white: #ffffff;
+    --black: #000000;
+    
+    --border-color: #e2e2e2;
+    --border-color-dark: #000000;
+    --border-width: 0.1vw;
+    
+    --error-color: #D62D3A;
+    
+    /* === OPACITY === */
+    --opacity-muted: 0.6;
+    --opacity-subtle: 0.75;
+    
+    /* === TRANSITIONS === */
+    --transition-fast: 0.1s ease;
+    --transition-standard: 0.3s ease;
+    --transition-slow: 2s ease;
+    
+    /* === GALLERY SPECIFIC === */
+    --gallery-columns: 4;
+    --gallery-thumbnails-width: 100vw;
+    --gallery-thumbnail-width: 25%;
+    --gallery-thumbnail-aspect: 1 / 1;
+    --gallery-image-width: 100%;
+    --gallery-image-height: auto;
+    --gallery-info-height: 20%;
+    --gallery-info-padding: 1.5vh 2vw;
+    --gallery-thumbnail-height: 30vh;
+    
+    /* === Z-INDEX SCALE === */
+    --z-index-base: 1;
+    --z-index-section: 98;
+    --z-index-header-mask: 99;
+    --z-index-header: 100;
+    --z-index-popup: 8999;
+    --z-index-popup-overlay: 10000;
+}

@@ -1,3 +1,5 @@
+import "./index.css";
+
 /* @desc: the top menu component of the website page
  * @param name: the text to display on the top right button
  * @param basketSize: how many items are currently in the basket

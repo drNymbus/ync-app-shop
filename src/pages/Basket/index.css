@@ -6,8 +6,8 @@
     flex-direction: row;
     width: 100%;
     flex: 1;
-    border-top: 1px solid black;
-    padding-top: 190px;
+    border-top: var(--border-width) solid var(--border-color-dark);
+    padding-top: var(--spacing-xl);
 }
 
 /* ================================
@@ -30,8 +30,8 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    padding: 120px;
-    border-bottom: 1px solid black;
+    padding: var(--spacing-lg);
+    border-bottom: var(--border-width) solid var(--border-color-dark);
 }
 
 /* Article Image*/
@@ -86,7 +86,7 @@
 
 .article-title {
     margin: 0;
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     font-weight: normal;
     text-transform: uppercase;
     height: 51px;
@@ -94,9 +94,9 @@
 
 .article-delivery-description {
     width: 100%;
-    margin: 5px 0;
-    font-size: 10px;
-    color: black;
+    margin: var(--spacing-xs) 0;
+    font-size: var(--font-size-xs);
+    color: var(--black);
 }
 
 /* Icon incrementator*/
@@ -134,11 +134,17 @@
     margin: 0 2px;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    border: 1px solid #c14bff;
-    color: #c14bff;
-    font-size: 16px;
+    background-color: var(--white);
+    border: var(--border-width) solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: var(--font-size-sm);
     cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.article-add:hover, .article-remove:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 .article-delete {
@@ -178,16 +184,15 @@
 }
 
 .empty-basket {
-    font-size: 2.2rem;
+    font-size: var(--font-size-lg);
     font-weight: bold;
-    color: #333;
-    animation: zoomIn 0.5s ease-out forwards;
-    animation: pulseZoom 3s ease-in-out infinite;
+    color: var(--font-color-secondary);
+    animation: zoomIn 0.5s ease-out forwards, pulseZoom 3s ease-in-out infinite;
 }
   
 .empty-basket-image-container {
-    width: 100vw;
-    margin-top: 2rem;
+    width: var(--screen-width);
+    margin-top: var(--spacing-md);
     overflow: hidden;
     position: relative;
     height: 150px;

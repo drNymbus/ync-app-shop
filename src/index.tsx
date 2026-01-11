@@ -164,6 +164,8 @@ function App() {
                 <button onClick={() => setGone(false)}>OK</button>
             </div>}
 
+            <Footer onClick={aboutState}/>
+
         </div>
     );
 

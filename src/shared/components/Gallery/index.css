@@ -1,205 +1,73 @@
-
-  
   /* ================================
      GALERIE PRINCIPALE
   ================================ */
   .gallery {
-    opacity: 1;
-    transform: translateY(2vh);
-    transition: opacity var(--transition-slow), transform var(--transition-slow);
-    animation: fadeInUpGallery 1.25s ease both;
-    animation-delay: 1s;
-    height: var(--content-height);
-    margin-top: var(--margin-height);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    font-family: var(--font-family);
   }
-  
-  .gallery-container {
-    /* margin: 0 var(--container-margin-x); */
-    /* margin-top: var(--spacing-lg); */
-    width: var(--gallery-thumbnails-width);
-  }
-  
-  .gallery-thumbnails {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: var(--gallery-thumbnails-width);
-    gap: 0;
-  }
-  
-  .gallery-thumbnail {
-    width: var(--gallery-thumbnail-width);
-    /* aspect-ratio: var(--gallery-thumbnail-aspect); */
-    box-sizing: border-box;
+
+  .gallery-item {
     display: flex;
     flex-direction: column;
-    border: var(--border-width) solid var(--border-color);
-    overflow: hidden;
-  }
-  
-  /* ================================
-     CONTENU DES THUMBNAILS
-  ================================ */
-  .image-wrapper {
-    flex: 1 1 auto;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    aspect-ratio: var(--gallery-thumbnail-aspect);
+    border: 1px solid var(--background-color);
   }
-  
-  .gallery-image {
-    width: 100%;
-    height: 100%;
+
+  .gallery-item:hover {
+    animation: hoverItem var(--transition-slow) forwards;
+  }
+  @keyframes hoverItem {
+    100% {
+      border: 1px solid var(--primary-color);
+    }
+  }
+
+  .gallery-wrapper img {
     object-fit: cover;
+    width: calc(var(--content-width) / 4);
+    height: calc(var(--content-width) / 4);
+  }
+
+  .gallery-description {
+    display: flex;
+    flex-direction: column;
   }
   
-  .description-wrapper {
-    flex: 0 0 auto;
-    width: 100%;
-    box-sizing: border-box;
-    padding: var(--gallery-info-padding);
-    background: var(--white);
-    text-align: left;
-    height: 10vh;
-  }
-  
-  /* ================================
-     TYPOGRAPHIE GALERIE
-  ================================ */
   .gallery-title {
-    margin-top: var(--spacing-sm);
-    font-size: var(--font-size-title-content);
-    color: var(--font-color);
-    width: 100%;
-    display: block;
-    transition: color var(--transition-standard);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .gallery-name {
     font-weight: bold;
   }
-  
-  .gallery-description {
-    font-family: var(--font-family);
-    font-size: var(--font-size-content);
-    color: var(--font-color);
-    margin-bottom: var(--spacing-sm);
+
+  .gallery-price {
+    color: var(--primary-color);
   }
-  
-  .gallery-note {
-    font-family: 'Bodoni Moda', serif;
-    font-style: italic;
-    font-size: var(--font-size-note);
-    color: var(--font-color);
-  }
-  
+ 
   .gallery-label {
-    font-family: var(--font-family);
-    font-size: var(--font-size-content);
-    color: var(--font-color);
-    padding-top: var(--spacing-xs);
-  }
-  
-  /* ================================
-     LOGO SECTION
-  ================================ */
-  .gallery-logo {
-    margin-top: var(--spacing-lg);
-    width: var(--content-width);
-    height: var(--spacing-xl);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .gallery-logo-image {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-  }
-  
-  /* ================================
-     SECTIONS FOOTER
-  ================================ */
-  .gallery-phrase,
-  .gallery-text {
-    width: var(--content-width);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .gallery-phrase {
-    background-color: var(--white);
-  }
-  
-  .gallery-text {
-    background-color: var(--background-secondary);
-  }
-  
-  .gallery-phrase p,
-  .gallery-text p {
-    font-size: var(--font-size-content);
-    color: var(--font-color);
-    margin: var(--spacing-sm) 0;
-    line-height: 1.6;
-    max-width: 90vw;
     opacity: var(--opacity-muted);
   }
   
-  .gallery-text-image {
-    width: 8vw;
-    height: auto;
-    margin: var(--spacing-md) 0;
+  .gallery-note {
+    font-style: italic;
+    text-align: center;
   }
-  
+    
   /* ================================
      RESPONSIVE DESIGN
-  ================================ */
-  @media (max-width: 1200px) {
-    :root {
-      --gallery-thumbnail-width: 32%;
-      --container-margin-x: 3vw;
-      --gallery-thumbnails-width: 94vw;
-    }
-  }
-  
+  ================================ */  
   @media (max-width: 768px) {
-    :root {
-      --gallery-thumbnail-width: 48%;
-      --container-margin-x: 4vw;
-      --gallery-thumbnails-width: 92vw;
-      --spacing-lg: 6vh;
-      --gallery-info-padding: 1vh 1.5vw;
+    .gallery {
+      grid-template-columns: 1fr 1fr;
     }
-  }
+
+    .gallery-item img {
+      width: calc(var(--content-width) / 2);
+      height: calc(var(--content-width) / 2);
+    }
   
-  @media (max-width: 480px) {
-    :root {
-      --gallery-thumbnail-width: 100%;
-      --container-margin-x: 5vw;
-      --gallery-thumbnails-width: 90vw;
-      --spacing-lg: 4vh;
-      --gallery-info-padding: 0.8vh 1vw;
-    }
-  }
-  
-  /* ================================
-     ANIMATIONS
-  ================================ */
-  @keyframes fadeInUpGallery {
-    from {
-      opacity: 0;
-      transform: translateY(7.5vh);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }

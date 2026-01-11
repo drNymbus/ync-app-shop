@@ -10,15 +10,15 @@
     width: 420px;
     height: 296px;
     margin-left: 12px;
-    border: 1px solid #000;
+    border: var(--border-width) solid var(--border-color-dark);
 }
 
 /* Titre */
 .order-summary .title {
-    background-color: #000;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     padding: 8px 11px;
-    font-size: 19px;
+    font-size: var(--font-size-md);
     font-weight: 200;
     line-height: 1.2;
     text-transform: uppercase;
@@ -57,15 +57,15 @@
 
 /* Prix */
 .value {
-    font-size: 19px;
+    font-size: var(--font-size-md);
     font-weight: 500;
-    color: #c14bff;
+    color: var(--primary-color);
 }
   
 .total-value {
-    font-size: 26px;
+    font-size: var(--font-size-lg);
     font-weight: 400;
-    color: #c14bff;
+    color: var(--primary-color);
 }
 
 /* ================================
@@ -77,21 +77,21 @@
     padding: 21px 12px;
     position: relative;
     left: -1px;
-    background-color: white;
-    color: #c14bff;
-    border: 1px solid #c14bff;
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: var(--border-width) solid var(--primary-color);
     text-align: center;
-    font-size: 13.5px;
+    font-size: var(--font-size-sm);
     letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1;
+    transition: all var(--transition-standard);
+    z-index: var(--z-index-base);
 }
   
 .order-button:hover {
-    background-color: #c14bff;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 

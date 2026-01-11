@@ -1,3 +1,5 @@
+import "./index.css";
+
 /* @desc: the top title component of the website page
  * @param image: public path to the image to be displayed
  * @param name: section title

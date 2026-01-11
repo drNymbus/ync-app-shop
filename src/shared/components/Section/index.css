@@ -1,11 +1,35 @@
+/* ================================
+    SECTION COMPONENT
+================================ */
+
 .section {
-	position: fixed;
-	display: flex;
-	align-items: center;
-	height: calc(var(--screen-height) * 5/100);
-	margin: 50px;
+    position: fixed;
+    top: var(--header-height);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: var(--z-index-section);
+    width: calc(var(--section-width) + (var(--container-margin-x) * 2));
+    height: var(--section-height);
+    background: var(--white);
+    animation: fadeInUpApp 1.9s ease both;
+    animation-delay: 3s;
 }
 
-.section p {
-	margin: 20px;
+.section-image {
+    margin-left: var(--container-margin-x);
+    /* width: 3vw; */
+    height: calc(var(--section-height) * 0.8);
+    /* margin: 0 1%; */
+    object-fit: contain;
+}
+
+.section-title {
+    margin-left: 15px;
+    /* margin: 0; */
+    /* padding-left: 2%; */
+    color: var(--font-color);
+    font-size: var(--font-size-section);
+    display: flex;
+    align-items: center;
 }

@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import ShopAPIContext from "../../context/ShopAPIProvider";
-import Section from "./Section";
 
 import './index.css';
 
 function Vitrine({ id, add, goto }) {
     const [item, setItem] = useState(null);
+    // NEW: track when the image is loaded to trigger the reveal animation
+    const [imgLoaded, setImgLoaded] = useState(false);
     const { fetchItem } = useContext(ShopAPIContext);
 
     useEffect(() => {
@@ -14,23 +15,32 @@ function Vitrine({ id, add, goto }) {
             .catch(e => console.error(`[Vitrine] ${e.message}`));
     }, [id]);
 
+    // NEW: reset the loading state whenever the id changes (new item/image)
+    useEffect(() => {
+        setImgLoaded(false);
+    }, [id]);
+
     const handleClick = () => {
         add(id, item.sizes[0]);
         goto();
     };
 
-    return (<>
-        <div className="showcase">
+    return (
+        // NEW: toggle clip-path animation based on image load state
+        // <div className={`showcase`}>
+        <div className={`showcase ${imgLoaded ? 'revealed' : 'pending'}`}>
             <div className="item">
-                <div className="zoom-box">
-                    <div className="shadow-image">
-                        <img src={item?.images[0] || "??"} alt="" />
-                    </div>
-                    <div className="item-description-border">
-                        <div className="item-description">
-                            <p>{item?.description || ""}</p>
-                        </div>
-                    </div>
+                <div className="item-image">
+                    {/* NEW: start animation only when the image has actually loaded */}
+                    <img
+                        src={item?.images[0] || ""}
+                        alt=""
+                        onLoad={() => setImgLoaded(true)}
+                        onError={() => setImgLoaded(true)}
+                    />
+                </div>
+                <div className="item-description">
+                    <p>{item?.description}</p>
                 </div>
                 <button
                     className="item-button custom-target"
@@ -38,9 +48,14 @@ function Vitrine({ id, add, goto }) {
                     onClick={handleClick}
                     price={item?.price}
                 />
+                <div className="arrow">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
-    </>);
+    );
 }
 
 export default Vitrine;
