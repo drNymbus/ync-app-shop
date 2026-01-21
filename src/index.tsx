@@ -145,10 +145,10 @@ function App() {
             {(state === "BASKET") && <Basket basket={basket} compact={false} add={addBasket} rm={removeBasket} del={removeBasketSize} next={paymentState} />}
             {(state === "PAYMENT") && <Payment basket={basket} onSuccess={acknowledgmentState} onFailure={basketState} />}
 
-            {(state === "ABOUT") && <About />}
-            {(state === "ACKNOWLEDGMENT") && <Acknowledgment />}
+            {/* {(state === "ABOUT") && <About />} */}
+            {/* {(state === "ACKNOWLEDGMENT") && <Acknowledgment />} */}
 
-            {popupItem && popupId && (
+            {/* {popupItem && popupId && (
                 <PopupItem
                     item={popupItem}
                     quantity={popupQuantity}
@@ -156,13 +156,13 @@ function App() {
                     add={addBasket}
                     toggleLike={() => setLikes(likes + 1)}
                 />
-            )}
+            )} */}
 
-            {gone && <div className="info-popup">
+            {/* {gone && <div className="info-popup">
                 <h1>Tu t'es fait volé !</h1>
                 <p>Certains articles de ton panier ont été retirés car il ne sont plus disponible.</p>
                 <button onClick={() => setGone(false)}>OK</button>
-            </div>}
+            </div>} */}
 
             {(state == "HOME") && <Footer onClick={aboutState}/>}
 

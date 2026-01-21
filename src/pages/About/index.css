@@ -55,21 +55,22 @@ span {
     bottom: 0;
 }
 
-.label {
+/* .label {
     display: flex;
     align-items: center;
     font-size: 12px;
     height: 75px;
-}
+} */
 
-.label img {
+/* .label img {
     padding: 0px 10px 0px 10px;
     height: 40%;
 }
 
 .label h3 {
     padding: 0px 10px 0px 10px;
-}
+} */
+
 .faq p {
     max-width: 100%;
     padding: 25px;

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { make, register } from 'simple-body-validator';
 import useValidators from '../../../shared/hook/useValidators';
 
+import './index.css';
+
 function PaymentForm({ order, setOrderField, errors, setErrorsField }) {
     const [suggestions, setSuggestions] = useState([]);
 
@@ -41,7 +43,7 @@ function PaymentForm({ order, setOrderField, errors, setErrorsField }) {
 
             <div className="delivery">
                 <h1>Méthode de livraison</h1>
-                <div className="shipping-option">
+                <div className="checkbox">
                     <input type="radio" id="to-my-address" name="shipping-method" defaultChecked />
                     <label htmlFor="to-my-address">À mon adresse</label>
                 </div>
@@ -60,7 +62,7 @@ function PaymentForm({ order, setOrderField, errors, setErrorsField }) {
                 />
                 {errors.mail && <p className="error-message">{errors.mail}</p>}
 
-                <div className="checkbox-container">
+                <div className="checkbox">
                     <input
                         type="checkbox"
                         id="newsletter"
@@ -163,7 +165,7 @@ function PaymentForm({ order, setOrderField, errors, setErrorsField }) {
             </div>
 
 
-            <div className="checkbox-container">
+            <div className="checkbox">
                 <input
                     type="checkbox"
                     id="gtc"

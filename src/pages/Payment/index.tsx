@@ -198,7 +198,7 @@ function Payment({ basket, onFailure, onSuccess }) {
         <div className="payment">
             <PaymentForm order={order} setOrderField={setOrderField} errors={errors} setErrorsField={setErrorsField}/>
             {/*<PaymentSummary basket={basket} payment={time2pay}/>*/}
-            <Summary basket={basket} next={time2pay} detailed={true} />
+            {/* <Summary basket={basket} next={time2pay} detailed={true} /> */}
         </div>
         {status && <div className="payment-status">
             <h1>{status.event}</h1>

@@ -4,13 +4,14 @@
 .order-summary {
     display: flex;
     flex-direction: column;
-    /* position: fixed; */
-    bottom: 0px;
+    position: fixed; /* changed from 'sitcky' to fixed so it stays at the bottom of the viewport */
+    left: 0;
     right: 0;
+    bottom: 0;
     width: 100%;
-    height: 30%;
-    margin-left: 12px;
+    background-color: var(--white);
     border: var(--border-width) solid var(--border-color-dark);
+    z-index: var(--z-index-base); /* keep above page content */
 }
 
 /* Titre */
@@ -24,30 +25,19 @@
     text-transform: uppercase;
 }
 
-/* Details */
-.order-summary .details {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 15px 5px 20px;
-    font-size: 18.25px;
-    height: 167px;
-}
-
-.amount-row{
-    margin-top: 16px;
-}
-
-.amount-row, .delivery-row {
+.amount-row, .delivery-row, .total-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 14px;
     font-size: 18.25px;
     text-align: left;
 }
   
 .total-row {
-    display: flex;
-    justify-content: space-between;
     margin-top: 15px;
     margin-bottom: 10px;
     font-size: 25px;
@@ -55,13 +45,16 @@
     text-align: left;
 }
 
-/* Prix */
+.label {
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    color: var(--font-color-dark);
+}
 .value {
     font-size: var(--font-size-md);
     font-weight: 500;
     color: var(--primary-color);
 }
-  
 .total-value {
     font-size: var(--font-size-lg);
     font-weight: 400;
@@ -72,11 +65,10 @@
     BOUTON PASSER A LA SUITE : .order-button
 ================================ */
 .order-button {
-    width: 100.5%;
-    height: 78px;
-    padding: 21px 12px;
-    position: relative;
-    left: -1px;
+    width: 100%;
+    height: 7vh;
+    margin: 0;
+
     background-color: var(--white);
     color: var(--primary-color);
     border: var(--border-width) solid var(--primary-color);

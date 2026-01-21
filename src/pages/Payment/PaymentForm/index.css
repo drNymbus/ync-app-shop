@@ -1,0 +1,76 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 70%;
+
+    --input-width: 80%;
+    --input-height: 70%;
+    --input-margin-width: 3vw;
+    --input-margin-height: 1.5vh;
+}
+.form h1 {
+    margin-left: var(--input-margin-width);
+}
+
+input[type="email"], input[type="text"], input[type="tel"] {
+    width: var(--input-width);
+    height: 3vh;
+
+    margin-top: var(--input-margin-height); 
+    margin-bottom: var(--input-margin-height);
+    margin-left: var(--input-margin-width);
+    margin-right: var(--input-margin-width);
+
+    border: 1px solid black;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.checkbox {
+    padding-left: var(--input-margin-width);
+}
+.checkbox label {
+    padding-left: .5vw;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus {
+    outline: 0.5px solid #8f38be;
+}
+
+input[type="email"].error-border,
+input[type="text"].error-border,
+input[type="tel"].error-border {
+    color: #D62D3A;
+    border: 1px solid #D62D3A;
+}
+.error-message {
+    color: #D62D3A;
+    margin-top: var(--input-margin-height); 
+    margin-bottom: var(--input-margin-height);
+    margin-left: var(--input-margin-width);
+    margin-right: var(--input-margin-width);
+}
+
+.name-fields, .city-fields {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2%;
+    /* margin: var(--input-margin); */
+    padding-left: var(--input-margin-width);
+    width: var(--input-width);
+}
+.name-fields input, .city-fields input {
+    margin: 0;
+    /* width: calc(var(--input-width) / 2); */
+}
+
+@media (max-width: 768px) {
+    .form {
+        width: 100%;
+        font-size: var(--font-size-small);
+    }
+}

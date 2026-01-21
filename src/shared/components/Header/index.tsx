@@ -8,10 +8,8 @@ import "./index.css";
  * @return: the top menu component of the website page
  */
 function Header({name, basket, homeFn, aboutFn, basketFn}) {
-
     // If top right button is "PANIER" then display the number of items in basket next to it
     // let item_count = Object.values(basket).reduce((a, b) => a + b, 0);
-
     const item_count = Object.values(basket).reduce((a, b) => {
         const count_a = Object.values(a).reduce((a,b) => a+b, 0);
         const count_b = Object.values(b).reduce((a,b) => a+b, 0);
@@ -21,13 +19,11 @@ function Header({name, basket, homeFn, aboutFn, basketFn}) {
     let display_name = (name === "PANIER") ? `${name}[${item_count}]` : name;
 
     return (
-        <div className="header-mask">
-            <div className="header">
-                <button className="header-left" onClick={homeFn}>YNC SHOP</button>
-                <div className="header-right">
-                    <button className="butt-right1" onClick={aboutFn}>À PROPOS</button>
-                    <button className="butt-right" onClick={basketFn}>{display_name}</button>
-                </div>
+        <div className="header">
+            <button className="header-left" onClick={homeFn}>YNC SHOP</button>
+            <div className="header-right">
+                <button className="butt-right1" onClick={aboutFn}>À PROPOS</button>
+                <button className="butt-right" onClick={basketFn}>{display_name}</button>
             </div>
         </div>
     );

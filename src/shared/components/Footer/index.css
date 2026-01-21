@@ -1,43 +1,38 @@
-  /* ================================
-     LOGO SECTION
-  ================================ */
-  .footer {
+/* ================================
+    LOGO SECTION
+================================ */
+.footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .footer img {
-    margin-top: var(--spacing-lg);
-    height: calc(var(--header-height) * 2);
-    overflow: hidden;
-  }
-  
-  /* ================================
-     SECTIONS FOOTER
-  ================================ */
-  .footer-text {
-    width: var(--content-width);
+.footer img {
+    height: var(--footer-height);
+}
+
+.footer-text {
+    width: var(--footer-width) ;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     background-color: var(--background-secondary);
     opacity: var(--opacity-muted);
-  }
+}
+.footer-text p {
+    margin: var(--footer-margin); 
+}
 
-  .footer-text p, button {
-    font-size: var(--font-size-content);
-    color: var(--font-color);
-    margin: var(--spacing-sm) 0;
-    line-height: 1.6;
-    max-width: 90vw;
-  }
-  
-  .footer button {
-    background-color: var(--background-secondary);
-    border: none;
-    color: var(--primary-color);
-  }
+@media (max-width: 768px) {
+    .footer img {
+        height: calc(var(--footer-height) / 2);
+    }
+    .footer-text {
+        font-size: var(--font-size-small);
+    }
+}

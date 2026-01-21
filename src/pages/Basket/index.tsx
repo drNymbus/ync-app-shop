@@ -2,6 +2,7 @@ import { useContext, useEffect, useState, useCallback } from "react";
 import ShopAPIContext from "../../shared/context/ShopAPIProvider";
 import Summary from '../../shared/components/Summary';
 
+import './variables.css';
 import './index.css';
 
 function BasketArticle({ item, size, quantity, max_qtty, compact, add, rm, del }) {
@@ -91,8 +92,20 @@ function Basket({ basket, compact=true, add=undefined, rm=undefined, del=undefin
             : (<div className="basket">
                 <div className="basket-rows">
                     {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
+                    {Object.keys(basket).map((item, i) => <BasketItem key={i} basket={basket} id={item} compact={compact} add={add} rm={rm} del={del}/>)}
                 </div>
-                {/* <Summary basket={basket} detailed={false} next={next}/> */}
+                <Summary basket={basket} detailed={false} next={next}/>
             </div>)}
 
     </>);

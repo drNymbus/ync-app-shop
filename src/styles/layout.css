@@ -1,8 +1,6 @@
 /* ================================
     LAYOUT UTILITIES
 ================================ */
-
-/* Main App Container */
 .App {
     display: flex;
     flex-direction: column;
@@ -10,35 +8,6 @@
     min-height: var(--screen-height);
 
     font-family: var(--font-family);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-medium);
     color: var(--font-color);
-}
-
-/* Content Area - Standardized spacing from header/section */
-.content-area {
-    position: relative;
-    width: var(--content-width);
-    min-height: var(--content-height);
-    margin-top: var(--margin-height);
-}
-
-/* Page Container - Standardized padding for pages */
-.page-container {
-    width: 100%;
-    padding: var(--spacing-md) var(--container-padding);
-}
-
-/* Section Spacing Helper */
-.section-spacing {
-    margin-top: var(--margin-height);
-}
-
-.blank {
-    height: calc(var(--content-height) * 0.25);
-}
-
-@media (max-width: 768px) {
-    .App {
-        font-size: var(--font-size-sm);
-    }
 }

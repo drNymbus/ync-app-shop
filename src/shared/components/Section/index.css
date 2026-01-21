@@ -2,33 +2,25 @@
     SECTION COMPONENT
 ================================ */
 .section {
+    z-index: 99;
     position: fixed;
-    top: var(--header-height);
     display: flex;
-    flex-direction: row;
     align-items: center;
-    z-index: var(--z-index-section);
-    width: calc(var(--section-width) + (var(--container-margin-x) * 2));
-    height: var(--section-height);
+
+    top: var(--header-height);
+    height: calc(var(--section-height) - var(--section-margin) * 2);
+    margin: var(--section-margin);
+
     background: var(--white);
     animation: fadeInUpApp var(--transition-slow) both;
     animation-delay: var(--content-reveal);
 }
 
 .section-image {
-    margin-left: var(--container-margin-x);
-    /* width: 3vw; */
     height: calc(var(--section-height) * 0.8);
-    /* margin: 0 1%; */
-    object-fit: contain;
 }
 
 .section-title {
-    margin-left: 15px;
-    /* margin: 0; */
-    /* padding-left: 2%; */
-    color: var(--font-color);
-    font-size: var(--font-size-section);
-    display: flex;
-    align-items: center;
+    margin-left: var(--section-margin);
+    font-size: 1.5em;
 }

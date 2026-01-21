@@ -1,0 +1,453 @@
+/* body */
+.payment {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    flex: 1;
+    border-top: 1px solid black;
+    /* align-items: center; */
+    justify-content: center;
+    padding-top: 190px;
+}
+
+.form {
+    /* width: 1500px; */
+    width: 700px;
+    height: 600px;
+    margin-top: 50px;
+    margin-left: -950px;
+    /* margin-left: 200px; */
+    /* margin-left: 33%; */
+    padding: 20px;
+    /* border: 2px solid yellowgreen; */
+}
+
+.payment h1 {
+    font-size: 17px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.detail-summary h1{
+    margin: 0;
+}
+
+
+.delivery,
+.payment .contact,
+.shipping {
+    margin-bottom: 30px;
+}
+
+/* Méthode de livraison */
+.shipping-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.shipping-option input[type="radio"] {
+    accent-color: #c14bff;
+    margin-right: 8px;
+}
+
+.shipping-option label {
+    font-size: 14px;
+}
+
+
+/* Champs de formulaire */
+.contact input[type="email"],
+.shipping input[type="text"],
+.shipping input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.contact input[type="email"]:focus,
+.shipping input[type="text"]:focus,
+.shipping input[type="tel"]:focus {
+    outline: 0.5px solid #8f38be;
+}
+
+.contact input[type="email"].error-border,
+.shipping input[type="text"].error-border,
+.shipping input[type="tel"].error-border {
+    border: 1px solid #D62D3A;
+}
+
+.contact input[type="email"].error-border::placeholder,
+.shipping input[type="text"].error-border::placeholder,
+.shipping input[type="tel"].error-border::placeholder {
+    color: #D62D3A;
+    opacity: 0.75;
+}
+
+.name-fields,
+.city-fields {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 7px;
+}
+
+.name-fields input,
+.city-fields input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.error-message {
+    color: #D62D3A;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.error-border {
+    /* border: 2px #c14bff solid  !important; */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Checkbox pour newsletter */
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 5px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 8px;
+    margin-top: 0;
+    accent-color: #c14bff;
+}
+
+
+.checkbox-container label {
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+/* .basket-summary {
+display: flex;
+flex-direction: column;
+margin-top: 50px;
+height: 600px;
+border: 2px solid red;
+} */
+
+.payment-summary{
+    /* border: 2px solid yellow; */
+    /* width: 450px; */
+    width: 100%;
+    /* height: 5%; */
+    /* margin-left: 85px; */
+    /* margin-top: 50px; */
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px; */
+    margin-bottom: 30px;
+    /* border: 5px solid red; */
+}
+
+/* .basket-image {
+width: 40px;
+height: 40px;
+border: 1px solid #ccc;
+background-color: #fff;
+object-fit: contain;
+border: 2px solid red;
+} */
+
+.basket-summary {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid #ff0000; */
+    border: 1px solid black;
+    /* margin-top: 25px; */
+    /* height: 465px; */
+    /* width: 450px; */
+    width: 100%;
+    height: auto;
+    /* border: 4px solid brown; */
+}
+
+.basket-summary h1 {
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 15px;
+    font-weight: 500;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: 1px solid #800080;
+}
+
+
+.basket-product {
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    flex: 1;
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 42px;
+    background-color: #fff;
+    border-bottom: 1px solid #800080;
+    border: 2px solid red;
+}
+
+.product-image {
+    margin-right: 15px;
+}
+
+.product-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-name {
+    font-size: 14px;
+    margin-bottom: 2px;
+    width: min-content;
+}
+
+.product-quantity {
+    font-size: 12px;
+    color: #666;
+    width: min-content;
+}
+
+.product-price {
+    font-size: 26px;
+    font-weight: 400;
+    padding-right: 40px;
+}
+
+.basket-price-compact {
+    width: 100%;
+    /* padding: 15px; */
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.order-summary-compact {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.price-details-compact {
+    /* margin-bottom: 10px; */
+    /* margin-top: 3px; */
+    padding: 15px;
+    padding-left: 40px;
+    font-size: 18.25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-row-compact {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 18.25px;
+}
+
+.price-label-compact {
+    color: #333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.price-value-compact {
+    font-size: 19px;
+    font-weight: 500;
+    font-weight: normal;
+    text-align: left;
+    color: #c14bff;
+    padding-right: 35px;
+}
+
+.total-value-compact {
+    font-size: 26px;
+    font-weight: 400;
+    text-align: left; 
+    color: #c14bff;
+    padding-right: 35px;
+}
+
+.total-row-compact {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.finalisation-button {
+    background-color: #fff;
+    color: #c14bff;
+    border: 1px solid #c14bff;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: auto;
+    /* width: 100.5%; */
+    /* width: 452px; */
+    width: calc(100% + 2px);
+    transition: all 0.3s ease;
+    z-index: 1;
+    position: relative;
+    left: -1px;
+    bottom: -1px;
+    right:-1px
+}
+
+.finalisation-button:not(:disabled):hover {
+    color: #eee;
+    background-color: #c14bff;
+}
+
+.finalisation-button:disabled {
+    cursor: not-allowed;
+}
+
+.payment-basket{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    width: 21%;
+    height: 600px;
+    margin-top: 50px;
+    padding: 20px;
+    /* border: 2px solid blue; */
+}
+
+
+.payment-note {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    color: black;
+    text-align: left;
+    /* border: 5px solid orange; */
+}
+
+.payment-message {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    color: #333;
+    font-size: 14px;
+}
+
+.payment-rows {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* margin-bottom: 16px; */
+    /* border: 4px solid green; */
+    overflow-y: auto; 
+    padding: 8px;
+    margin-bottom: 16px;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid black;
+}
+
+.payment-rows::-webkit-scrollbar {
+    width: 6px;
+}
+
+.payment-rows::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.payment-rows::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.payment-rows::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.payment-product {
+    display: flex;
+    align-items: center;
+    padding: 12px 8px;
+    /* border-bottom: 1px solid #f0f0f0; */
+    /* border: 4px solid yellow; */
+}
+
+.payment-product-image {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.payment-product-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-basket-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.payment-product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.product-quantity {
+    font-size: 12px;
+    color: #666;
+}
+
+.product-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    text-align: right;
+    min-width: 70px;
+}

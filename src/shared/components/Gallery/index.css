@@ -1,83 +1,73 @@
-  /* ================================
-     GALERIE PRINCIPALE
-  ================================ */
-  .gallery-space {
+/* ================================
+GALERIE PRINCIPALE
+================================ */
+.gallery-space {
     text-align: center;
-    margin-top: calc(var(--margin-height) / 2);
-    margin-bottom: calc(var(--margin-height) / 2);
-    margin-left: var(--margin-width);
-    margin-right: var(--margin-width);
-  }
+    padding-top: 15vh;
+    padding-bottom: 10vh
+}
 
-  .gallery {
+.gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    font-family: var(--font-family);
-  }
+}
 
-  .gallery-item {
+.gallery-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid var(--background-color);
-  }
-
-  .gallery-item:hover {
+}
+.gallery-item:hover {
     animation: hoverItem var(--transition-slow) forwards;
-  }
-  @keyframes hoverItem {
-    100% {
-      border: 1px solid var(--primary-color);
-    }
-  }
+}
+@keyframes hoverItem {
+    100% { border: 1px solid var(--primary-color); }
+}
 
-  .gallery-wrapper img {
+.gallery-wrapper img {
     object-fit: cover;
-    width: calc(var(--content-width) / 4);
-    height: calc(var(--content-width) / 4);
-  }
+    width: calc(var(--gallery-width) / 4);
+    height: calc(var(--gallery-width) / 4);
+}
 
-  .gallery-description {
+.gallery-description {
     display: flex;
     flex-direction: column;
     margin-left: .5vw;
     margin-right: .5vw;
-  }
-  
-  .gallery-title {
+}
+
+.gallery-title {
     display: flex;
     justify-content: space-between;
-  }
-
-  .gallery-name {
+}
+.gallery-name {
     font-weight: bold;
-  }
-
-  .gallery-price {
+}
+.gallery-price {
     color: var(--primary-color);
-  }
- 
-  .gallery-label {
+}
+.gallery-label {
     opacity: var(--opacity-muted);
-  }
-  
-  .gallery-note {
+}
+.gallery-note {
     font-style: italic;
     text-align: center;
-  }
-    
-  /* ================================
-     RESPONSIVE DESIGN
-  ================================ */  
-  @media (max-width: 768px) {
+}
+
+/* ================================
+RESPONSIVE DESIGN
+================================ */  
+@media (max-width: 768px) {
     .gallery {
-      grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        font-size: var(--font-size-small);
     }
 
     .gallery-item img {
-      width: calc(var(--content-width) / 2);
-      height: calc(var(--content-width) / 2);
+        width: calc(var(--gallery-width) / 2);
+        height: calc(var(--gallery-width) / 2);
     }
-  
-  }
+}

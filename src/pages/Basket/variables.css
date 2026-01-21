@@ -1,0 +1,11 @@
+:root {
+    --article-width: 55vw;
+    --article-height: 15vh;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --article-width: 55vw;
+        --article-height: 15vh;
+    }
+}
