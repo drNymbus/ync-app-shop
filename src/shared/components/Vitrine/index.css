@@ -1,0 +1,192 @@
+/* ================================
+   VITRINE : .showcase
+================================ */
+
+.showcase {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--showcase-width);
+    height: var(--showcase-height);
+    margin-top: calc(var(--header-height) + var(--section-height));
+
+    background: var(--white);
+}
+.pending {
+    opacity: 0;
+}
+.revealed {
+    animation: fadeInUpApp var(--transition-slow) both;
+    animation-delay: 1s;
+}
+
+/* ================================
+   ITEM VITRINE
+================================ */
+.item {
+    display: grid;
+    grid-template-columns: 38% 24% 38%;
+    /* grid-template-rows: 90% 10%; */
+    height: calc(var(--showcase-height) - var(--showcase-margin));
+}
+
+.item-image {
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+    justify-self: center;
+
+    /* height: calc(var(--showcase-height) * .5); */
+}
+
+.item-image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ================================
+   DESCRIPTION VITRINE : .item-description
+================================ */
+
+.item-description {
+    grid-column: 3;
+    grid-row: 1;
+
+    width: 80%;
+    margin-left: 1%;
+
+    line-height: 1.5;
+}
+
+.item-description p {
+    margin: 0;
+}
+
+/* ================================
+   BOUTON VITRINE : .item-button
+================================ */
+
+.item-button {
+    grid-column: 2;
+    grid-row: 2;
+
+    /* justify-self: top; */
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+    font-size: var(--font-size-medium);
+    font-family: var(--font-family);
+
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+
+    transition: transform var(--transition-fast);
+    cursor: pointer;
+}
+.item-button::before {
+    content: "J'AIME BIEN!";
+}
+
+.item-button:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+.item-button:hover::before {
+    content: attr(price) "€";
+    transition: all var(--transition-slow);
+}
+
+/* ================================
+   Arrow animation
+================================ */
+.arrow {
+    position: absolute;
+    top: 90%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    cursor: pointer;
+}
+
+.arrow span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 5px solid var(--primary-color);
+    border-right: 5px solid var(--primary-color);
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 50% 20% 30%;
+    }
+
+    .item-image {
+        /* grid-column: 1;
+        grid-row: 1;
+        width: calc(var(--image-width) * 3); */
+    }
+
+    .item-button {
+        height: 40%;
+        margin-top: 10%;
+        margin-bottom: 20%;
+        /* grid-column: 1;
+        grid-row: 2;
+        width: calc(var(--image-width) * 3); */
+    }
+
+    .item-description {
+        grid-column: 2;
+        grid-row: 3;
+
+        width: 150%;
+        /* margin-top: -10%; */
+        margin-left: -25%;
+
+        text-align: center;
+        font-size: var(--font-size-small);
+        /* grid-column: 1;
+        grid-row: 3;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0; */
+    }
+
+    .arrow {
+        top: 93%;
+        left: 50%;
+    }
+}

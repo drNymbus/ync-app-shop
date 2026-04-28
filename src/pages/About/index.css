@@ -1,0 +1,102 @@
+.about {
+    /* margin-top: 10%; */
+    color: #1e1e1e;
+    background-color: #f9f9f9;
+    position: relative;
+    width: var(--content-width);
+    height: var(--content-height);
+    margin-top: var(--margin-height);
+}
+
+.wrapper {
+    display: flex;
+    text-align: left;
+}
+
+.content {
+    /* width: 50%; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+span {
+    font-size: 24px;
+    font-weight: 950;
+    letter-spacing: 1px;
+}
+
+.pp {
+    max-width: 75%;
+}
+
+.faq {
+    display: block flex; /*Faq est un bloc en bas de page + Elements se suivent et responsive*/
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+    /* Fixé en bas à gauche de l'écran */
+    width: 100%;
+    max-height: 75px;
+}
+
+.faq h1 {
+    margin: 0;
+    line-height: 1;
+    max-width: 200px;
+    overflow: hidden;
+    font-size: 80px;
+}
+
+.info {
+    z-index: 3;
+    width: auto;
+    bottom: 0;
+}
+
+/* .label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    height: 75px;
+} */
+
+/* .label img {
+    padding: 0px 10px 0px 10px;
+    height: 40%;
+}
+
+.label h3 {
+    padding: 0px 10px 0px 10px;
+} */
+
+.faq p {
+    max-width: 100%;
+    padding: 25px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 1;
+}
+
+.hidden {
+    content-visibility: hidden;
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+    position: absolute;
+    bottom: 75px;
+    width: 500px;
+}
+
+.visible img {
+    transform: rotate(180deg);
+    display: inline;
+}
+
+.hidden img {
+    visibility: visible;
+    display: inline;
+}

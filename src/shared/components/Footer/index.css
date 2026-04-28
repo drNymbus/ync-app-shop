@@ -1,0 +1,38 @@
+/* ================================
+    LOGO SECTION
+================================ */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer img {
+    height: var(--footer-height);
+}
+
+.footer-text {
+    width: var(--footer-width) ;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    background-color: var(--background-secondary);
+    opacity: var(--opacity-muted);
+}
+.footer-text p {
+    margin: var(--footer-margin); 
+}
+
+@media (max-width: 768px) {
+    .footer img {
+        height: calc(var(--footer-height) / 2);
+    }
+    .footer-text {
+        font-size: var(--font-size-small);
+    }
+}

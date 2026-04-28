@@ -1,0 +1,90 @@
+/* ================================
+    CSS VARIABLES - SINGLE SOURCE OF TRUTH
+================================ */
+
+:root {
+    /* === LAYOUT === */
+    --screen-width: 100vw;
+    --screen-height: 100vh;
+
+    --header-width: 100vw;
+    --header-height: 10vh;
+    --header-margin: 2vh;
+
+    --section-width: 100vw;
+    --section-height: 10vh;
+    --section-margin: 2vh;
+
+    --showcase-width: 100vw;
+    --showcase-height: 80vh;
+    --showcase-margin: 10vw;
+
+    --gallery-width: 100vw;
+    --gallery-height: 100vh;
+    --gallery-margin: 10vw;
+
+    --footer-width: 100vw;
+    --footer-height: 25vh;
+    --footer-margin: 2vh;
+
+    /* === TYPOGRAPHY === */
+    --font-family: "Necto Mono";
+    --font-color: #0d0d0d;
+    --font-color-secondary: #333333;
+
+    --font-size-small: 12px;
+    --font-size-medium: 18px;
+    --font-size-large: 28px;
+
+    /* === COLORS === */
+    --primary-color: #c14bff;
+    --primary-color-dark: #a03dcc;
+    --primary-color-hover: #8f38be;
+    --background-color: #f8f8f8;
+    --background-secondary: #dededec8;
+
+    --white: #ffffff;
+    --black: #000000;
+
+    --border-color: #e2e2e2;
+    --border-color-dark: #000000;
+    --border-width: 0.1vw;
+
+    --error-color: #D62D3A;
+
+    /* === OPACITY === */
+    --opacity-muted: 0.6;
+    --opacity-subtle: 0.75;
+
+    /* === TRANSITIONS === */
+    --transition-fast: 0.1s ease;
+    --transition-standard: 0.3s ease;
+    --transition-slow: 2s ease;
+
+    /* === GALLERY SPECIFIC === */
+    /* --gallery-columns: 4; */
+    /* --gallery-thumbnails-width: 100vw; */
+    /* --gallery-thumbnail-width: 25%; */
+    /* --gallery-thumbnail-aspect: 1 / 1; */
+    /* --gallery-image-width: 100%; */
+    /* --gallery-image-height: auto; */
+    /* --gallery-info-height: 20%; */
+    /* --gallery-info-padding: 1.5vh 2vw; */
+    /* --gallery-thumbnail-height: 30vh; */
+
+    /* === Z-INDEX SCALE === */
+    /* --z-index-base: 1;
+    --z-index-section: 98;
+    --z-index-header-mask: 99;
+    --z-index-header: 100;
+    --z-index-popup: 8999;
+    --z-index-popup-overlay: 10000; */
+}
+
+@font-face {
+    font-family: "Necto Mono";
+    src: url("https://raw.githubusercontent.com/collletttivo/necto-mono/main/fonts/NectoMono-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Helps with loading performance */
+}

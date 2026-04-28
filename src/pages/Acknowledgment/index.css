@@ -1,0 +1,41 @@
+/* ================================
+    PAGE : Acknowledgement
+================================ */
+
+.acknowledgment {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    margin-top: 15px;
+    border-top: 1px solid #f8f8f8;
+    text-align: center;
+}
+
+.acknowledgment img {
+    margin-top: 15%;
+    width: 40%;
+}
+
+.acknowledgment button {
+    margin-top: 3%;
+    width: 25%;
+    height: 5em;
+    background-color: white;
+    color: #c14bff;
+    border: 1px solid #c14bff;
+    transition: background-color 1s;
+}
+
+.acknowledgment button:hover {
+    background-color: #c14bff;
+    color: white;
+}
+
+.acknowledgment button:focus,
+.acknowledgment button:active {
+    transition: none;
+}
+

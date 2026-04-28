@@ -1,0 +1,400 @@
+/* ================================
+    PAGE : Popup
+================================ */
+
+.popup-page {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    width: var(--screen-width);
+    height: 80%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-index-popup);
+    box-sizing: border-box;
+    overflow: visible;
+  }
+  
+  /* ================================
+      SECTION MODELE : .model
+  ================================ */
+  
+  .model {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: var(--white);
+    position: relative;
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
+    animation: fadeIn var(--transition-standard);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* ================================
+      SECTION IMAGE : .popup-image-container
+  ================================ */
+  
+  .popup-image-container {
+    width: 50%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .popup-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    z-index: 1;
+  }
+  
+  .popup-mini-image {
+    position: absolute;
+    right: 1rem;
+    width: 3.75rem;
+    cursor: pointer;
+    border: 0.125rem solid var(--white);
+    box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.3);
+    z-index: var(--z-index-popup-overlay);
+  }
+  
+  .popup-thumbnails {
+    display: flex;
+    gap: 0.625rem;
+    margin-bottom: 1.25rem;
+    justify-content: center;
+  }
+  
+  .popup-mini-image.active {
+    border-color: var(--primary-color);
+  }
+  
+  .popup-main-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* ================================
+      SECTION DETAILS : .content-section
+  ================================ */
+  
+  .content-section {
+    width: 50%;
+    padding: 2rem 7.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    overflow-y: auto;
+    overflow: visible;
+  }
+  
+  .popup-title_quote {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .popup-title {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #0d0d0d;
+    margin: 0;
+  }
+  
+  .popup-quote {
+    font-style: italic;
+    font-size: 1.125rem;
+    color: black;
+    opacity: 0.7;
+    text-align: right;
+    padding-top: 0.3125rem;
+  }
+  
+  .popup-subtitle {
+    font-size: 1.2rem;
+    color: #0d0d0d;
+    text-transform: uppercase;
+    letter-spacing: 0.03125rem;
+    margin-top: 0.3125rem;
+  }
+  
+  .popup-price {
+    margin-top: 0.625rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0d0d0d;
+  }
+  
+  .popup-description {
+    font-size: 0.875rem;
+    color: #444;
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0 0 3.125rem 0;
+  }
+  
+  /* ================================
+      SELECTOR
+  ================================ */
+  
+  .size-dropdown {
+    width: 100%;
+    padding: 0.5rem;
+    border: 0.0625rem solid #ddd;
+    font-size: 0.875rem;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .size-dropdown:focus {
+    outline: none;
+    border-color: #c14bff;
+  }
+  
+  /* ================================
+      BOUTON PANIER
+  ================================ */
+  
+  .action-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0.625rem 0 1.5625rem;
+  }
+  
+  .popup-add {
+    width: 100%;
+    height: 2.5rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-standard);
+    text-transform: uppercase;
+    letter-spacing: 0.03125rem;
+    margin-bottom: 2.1875rem;
+  }
+  
+  .popup-add:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-0.125rem);
+  }
+  
+  .popup-add:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* ================================
+      BOUTON FERMETURE
+  ================================ */
+  
+  .popup-close {
+    position: absolute;
+    top: -2.1875rem;
+    right: 0.9375rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #666;
+    padding: 0.3125rem;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    transition: color var(--transition-standard);
+    z-index: var(--z-index-popup-overlay);
+  }
+  
+  .popup-close:hover {
+    color: #000;
+  }
+  
+  .popup-close img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* ================================
+      FOLDOUT
+  ================================ */
+  
+  .foldout-section {
+    border-bottom: 0.0625rem solid #e0e0e0;
+  }
+  
+  .foldout-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .foldout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.625rem 0;
+    transition: background-color 0.2s ease;
+  }
+  
+  .foldout-header:hover {
+    background-color: rgba(193, 75, 255, 0.05);
+  }
+  
+  .foldout-title {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--font-color);
+  }
+  
+  .foldout-icon {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: transform var(--transition-standard);
+  }
+  
+  .foldout-content {
+    padding-top: 0.625rem;
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  /* ================================
+      RESPONSIVE
+  ================================ */
+  
+  @media (max-width: 768px) {
+    .popup-page {
+      padding: 0.625rem;
+    }
+  
+    .model {
+      width: 95%;
+      height: 90%;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+  
+    .popup-image-container,
+    .content-section {
+      width: 100%;
+      padding: 1.25rem;
+    }
+  
+    .popup-image-container {
+      height: auto;
+      min-height: 18.75rem;
+    }
+  
+    .content-section {
+      height: auto;
+    }
+  
+    .popup-thumbnails {
+      order: 2;
+      margin: 0.9375rem 0 0;
+    }
+  
+    .popup-main-image-container {
+      order: 1;
+      min-height: 15.625rem;
+    }
+  
+    .popup-quote {
+      text-align: left;
+      position: static;
+    }
+  
+    .popup-title {
+      font-size: 1.5rem;
+    }
+  
+    .popup-subtitle {
+      font-size: 0.875rem;
+    }
+  
+    .popup-price {
+      font-size: 1.25rem;
+    }
+  
+    .popup-close {
+      top: 0.625rem;
+      right: 0.625rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popup-page {
+      padding: 0.3125rem;
+    }
+  
+    .model {
+      width: 98%;
+      height: 95%;
+    }
+  
+    .popup-image-container,
+    .content-section {
+      padding: 0.9375rem;
+    }
+  
+    .popup-thumbnails {
+      gap: 0.5rem;
+    }
+  
+    .popup-mini-image {
+      width: 3.125rem;
+    }
+  
+    .popup-title {
+      font-size: 1.25rem;
+    }
+  
+    .popup-add {
+      height: 2.8125rem;
+      font-size: 0.8125rem;
+    }
+  }
+  
+  /* ================================
+      NEW CSS : Purple Block
+  ================================ */
+  
+  .purple-table-block {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: var(--font-size-lg);
+  }
+  

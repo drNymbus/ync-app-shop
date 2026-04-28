@@ -1,0 +1,13 @@
+/* ================================
+    LAYOUT UTILITIES
+================================ */
+.App {
+    display: flex;
+    flex-direction: column;
+    width: var(--screen-width);
+    min-height: var(--screen-height);
+
+    font-family: var(--font-family);
+    font-size: var(--font-size-medium);
+    color: var(--font-color);
+}

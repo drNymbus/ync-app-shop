@@ -1,0 +1,37 @@
+/* ================================
+    HEADER COMPONENT
+================================ */
+.header {
+    z-index: 99;
+    display: flex;
+    position: fixed;
+
+    width: calc(var(--header-width) - var(--header-margin) * 2);
+    height: calc(var(--header-height) - var(--header-margin) * 2);
+    margin: var(--header-margin);
+
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    background-color: var(--background-color);
+
+    animation: fadeInUpApp var(--transition-slow) both;
+    animation-delay: var(--content-reveal);
+}
+
+.header button {
+    margin: 1vw;
+
+    border: none;
+    background: none;
+
+    font-family: var(--font-family);
+
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.butt-right {
+    color: var(--primary-color);
+}
