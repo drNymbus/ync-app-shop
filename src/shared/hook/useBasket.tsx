@@ -12,7 +12,7 @@ function useBasket() {
     async function gatherBasket() {
         console.log('gatherBasket');
         await fetchBasket()
-            .then(data => setBasket(data))
+            .then(data => { if (data) setBasket(data); })
             .catch(e => console.error(`[useBasket;gatherBasket] ${e}`));
 
         for (const id in basket) {
