@@ -6,22 +6,26 @@ import './index.css';
 function ItemDetails({ item, size, quantity }) {
 	return (
 		<div className="detail-product">
+			{/*
 			<div className="detail-product-image">
 				<div className="detail-product-icon" >
 					<img className="detail-basket-image" src={item ? item.images?.[0] || "" : ""} alt={item ? item.display_name : "?"}/>
+					<img className="detail-product-image" src="assets/home_icon.svg"/>
 				</div>
 			</div>
+			*/}
+			<img className="detail-product-image" src="assets/home_icon.svg"/>
 			<div className="detail-product-details">
 				<div className="detail-name">{item ? `${item.title} (${size})` : "?"}</div>
-				<div className="detail-quantity">Quantité: {quantity}</div>
+				<div className="detail-quantity">x{quantity}</div>
 			</div>
-			<div className="detail-price">{item ? item.price * quantity: '?'} €</div>
+			<div className="detail-product-price">{item ? item.price * quantity: '?'} €</div>
 		</div>
 	);
 }
 
-function BasketSummary({ basket, items }) {
-	return (<div className="basket-summary">
+function ItemSummary({ basket, items }) {
+	return (<div className="item-summary">
 		{Object.entries(basket).map(el => {
 			const id = el[0];
 			return Object.entries(basket[id]).map(el => {
@@ -55,10 +59,10 @@ function Summary({ basket, next, detailed=false }) {
 	}, [basket]);
 
 	return (<>
-		{detailed && <BasketSummary basket={basket} items={items}/>}
 		<div className="order-summary">
 			{/* TITLE */}
 			<div className="title">ORDER SUMMARY</div>
+			{detailed && <ItemSummary basket={basket} items={items}/>}
 			{/* DETAILS */}
 			<div className="details">
 				<div className="amount-row">

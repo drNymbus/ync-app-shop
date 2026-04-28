@@ -4,6 +4,7 @@
     justify-content: center;
 
     width: 70%;
+    margin-bottom: 5vh;
 
     --input-width: 80%;
     --input-height: 70%;
@@ -12,13 +13,14 @@
 }
 .form h1 {
     margin-left: var(--input-margin-width);
+    margin-right: var(--input-margin-width);
 }
 
 input[type="email"], input[type="text"], input[type="tel"] {
     width: var(--input-width);
     height: 3vh;
 
-    margin-top: var(--input-margin-height); 
+    margin-top: var(--input-margin-height);
     margin-bottom: var(--input-margin-height);
     margin-left: var(--input-margin-width);
     margin-right: var(--input-margin-width);
@@ -72,5 +74,7 @@ input[type="tel"].error-border {
     .form {
         width: 100%;
         font-size: var(--font-size-small);
+
+        --input-width: 100%;
     }
 }

@@ -7,6 +7,7 @@
 .basket-rows {
     display: flex;
     flex-direction: column;
+    width: 66%;
 }
 
 /* ================================
@@ -15,11 +16,12 @@
 .article {
     display: flex;
     gap: 2%;
-    width: var(--article-width);
+    /* width: var(--article-width); */
     height: var(--article-height);
     margin-top: calc(var(--article-height) / 2);
-    margin-left: calc((100vw - var(--article-width)) / 4);
-
+    /* margin-left: calc((100vw - var(--article-width)) / 4); */
+    margin-left: 10vw;
+    margin-right: 2vw;
 }
 
 .article img {

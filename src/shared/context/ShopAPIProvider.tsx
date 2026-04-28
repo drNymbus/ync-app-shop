@@ -6,8 +6,8 @@ import { set } from 'react-hook-form';
 const ShopAPIContext = createContext();
 
 export const ShopAPIProvider = ({ children }) => {
-    // const api_address = `https://yn-corp.xyz/api/shop`;
-    const api_address = `http://localhost:8080/api/shop`;
+    const api_address = `https://yn-corp.xyz/api/shop`;
+    // const api_address = `http://localhost:8080/api/shop`;
     // const api_address = `https://${process.env.REACT_APP_API_CONTACT_POINTS}:${process.env.REACT_APP_API_PORT}/api/shop`;
     const config = {withCredentials: true, headers: {'Content-Type':'application/json', 'Accept':'application/json'}};
 

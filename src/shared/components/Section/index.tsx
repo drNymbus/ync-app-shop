@@ -8,7 +8,7 @@ import "./index.css";
 function Section({ image, name }) {
     return (
         <div className="section">
-            <img className="section-image" src={image} />
+            <img className="section-image" src={image}/>
             <p className="section-title">{name}</p>
         </div>
     );
