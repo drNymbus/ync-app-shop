@@ -6,7 +6,7 @@
     z-index: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     width: var(--showcase-width);
     height: var(--showcase-height);
@@ -37,14 +37,17 @@
     grid-row: 1;
 
     display: flex;
+    align-items: flex-start;
     justify-self: center;
 
     /* height: calc(var(--showcase-height) * .5); */
 }
 
 .item-image img {
-    width: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
 }
 
 /* ================================
@@ -56,13 +59,31 @@
     grid-row: 1;
 
     width: 80%;
-    margin-left: 1%;
 
     line-height: 1.5;
 }
 
+.item-description::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: var(--black);
+    margin-bottom: 1rem;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: expandFromLeft 0.8s ease forwards;
+    animation-delay: 2s;
+}
+
 .item-description p {
     margin: 0;
+    margin-left: 3%;
+    font-size: var(--text-base);
+}
+
+@keyframes expandFromLeft {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
 }
 
 /* ================================
@@ -73,13 +94,16 @@
     grid-column: 2;
     grid-row: 2;
 
-    /* justify-self: top; */
+    justify-self: center;
+    align-self: center;
+
+    width: 200px;
+    height: 50px;
+
     margin-top: 5%;
     margin-bottom: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
-    
-    font-size: var(--font-size-medium);
+
+    font-size: var(--text-base);
     font-family: var(--font-family);
 
     border: none;
@@ -90,7 +114,7 @@
     cursor: pointer;
 }
 .item-button::before {
-    content: "J'AIME BIEN!";
+    content: "J'AIME BIEN !";
 }
 
 .item-button:hover {
@@ -166,6 +190,14 @@
         /* grid-column: 1;
         grid-row: 2;
         width: calc(var(--image-width) * 3); */
+    }
+
+    .item-description::before {
+        display: none;
+    }
+
+    .item-description p {
+        margin-left: 0;
     }
 
     .item-description {

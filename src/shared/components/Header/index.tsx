@@ -20,10 +20,12 @@ function Header({name, basket, homeFn, aboutFn, basketFn}) {
 
     return (
         <div className="header">
-            <button className="header-left" onClick={homeFn}>YNC SHOP</button>
-            <div className="header-right">
-                <button className="butt-right1" onClick={aboutFn}>À PROPOS</button>
-                <button className="butt-right" onClick={basketFn}>{display_name}</button>
+            <div className="header-inner">
+                <button className="header-left" onClick={homeFn}>YNC SHOP</button>
+                <div className="header-right">
+                    <button className="butt-right1" onClick={aboutFn}>À PROPOS</button>
+                    <button className="butt-right" onClick={basketFn}>{display_name}</button>
+                </div>
             </div>
         </div>
     );

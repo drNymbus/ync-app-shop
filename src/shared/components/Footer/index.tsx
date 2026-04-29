@@ -18,8 +18,7 @@ function Footer( {onClick}) {
                     <br/>
                     Nous contacter: <a href="mailto:yng.corporation@zohomail.eu">yng.corporation@zohomail.eu</a>
                 </p>
-                <p>© 2025 Young New Corporation.</p>
-                <p>L’univers est en expansion – nous aussi.</p>
+                <p>Young New Corporation© 2026. L’univers est en expansion – nous aussi.</p>
             </div>
             {/* <button onClick={onClick}> Je veux etre de la YNC </button> */}
         </div>

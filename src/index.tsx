@@ -43,35 +43,35 @@ function App() {
     // Define default app state
     const [state, setState] = useState("HOME");
     const [buttonDisplay, setButtonDisplay] = useState("PANIER");
-    const [section, setSection] = useState({name: "Quelconque", image: "assets/home_icon.svg"});
+    const [section, setSection] = useState({name: "Quelconque", image: `${process.env.PUBLIC_URL}/assets/section_icons/home_icon.svg`});
 
     function homeState() {
         setButtonDisplay("PANIER");
-        setSection({name:"Quelconque", image:"assets/home_icon.svg"});
+        setSection({name:"Quelconque", image:`${process.env.PUBLIC_URL}/assets/section_icons/home_icon.svg`});
         setState("HOME");
     };
 
     function paymentState() {
         setButtonDisplay("RETOUR");
-        setSection({name:"Paiement", image:"assets/payment_icon.svg"});
+        setSection({name:"Paiement", image:`${process.env.PUBLIC_URL}/assets/section_icons/payment_icon.svg`});
         setState("PAYMENT");
     };
 
     function basketState() {
         setButtonDisplay("RETOUR");
-        setSection({name:"Panier", image:"assets/basket_icon.svg"});
+        setSection({name:"Panier", image:`${process.env.PUBLIC_URL}/assets/section_icons/basket_icon.svg`});
         setState("BASKET");
     };
 
     function aboutState() {
         setButtonDisplay("RETOUR");
-        setSection({name:"À propos", image:"assets/home_icon.svg"})
+        setSection({name:"À propos", image:`${process.env.PUBLIC_URL}/assets/section_icons/about_icon.svg`})
         setState("ABOUT");
     };
 
     function acknowledgmentState() {
         setButtonDisplay("RETOUR");
-        setSection({name:"Nous te remercions !", image:"assets/acknowledgment/acknowledgment_icon.svg"});
+        setSection({name:"Nous te remercions !", image:`${process.env.PUBLIC_URL}/assets/section_icons/thanks_icon.svg`});
         setState("ACKNOWLEDGMENT");
     };
 
@@ -121,9 +121,9 @@ function App() {
                 const currentScrollY = window.scrollY;
                 // Check if we've scrolled past the bottom of the element
                 if (currentScrollY > rect.top) {
-                    setSection(section => { return {name:"Galerie", image:"assets/gallery_icon.svg"}; });
+                    setSection(section => { return {name:"Galerie", image:`${process.env.PUBLIC_URL}/assets/section_icons/galery_icon.svg`}; });
                 } else {
-                    setSection(section => { return {name:"Quelconque", image:"assets/home_icon.svg"}; });
+                    setSection(section => { return {name:"Quelconque", image:`${process.env.PUBLIC_URL}/assets/section_icons/home_icon.svg`}; });
                 }
             }
         };
