@@ -1,8 +1,13 @@
 import { useContext, useEffect, useState, forwardRef } from "react";
+import { motion } from "motion/react";
 import ShopAPIContext from "../../context/ShopAPIProvider";
-import Section from "./Section";
 
 import './index.css';
+
+const itemVariants = {
+    hidden:  { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1.5, ease: "easeOut" } },
+};
 
 function GalleryItem({ id, onItemClick }) {
     const { fetchItem } = useContext(ShopAPIContext);
@@ -15,7 +20,14 @@ function GalleryItem({ id, onItemClick }) {
     }, []);
 
     return (item === undefined ? <></> :
-        <div key={item.id} className="gallery-item" onClick={() => onItemClick(item.id)}>
+        <motion.div
+            className="gallery-item"
+            onClick={() => onItemClick(item.id)}
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+        >
             <div className="gallery-wrapper">
                 <img src={item.images[0]} alt="Article"/>
                 <div className="gallery-description">
@@ -24,21 +36,17 @@ function GalleryItem({ id, onItemClick }) {
                         <div className="gallery-price">{item.price}€</div>
                     </div>
                     <div className="gallery-label">{item.subtitle}</div>
-                    <div className="gallery-note">{item.quote}</div>
+                    {/* <div className="gallery-note">{item.quote}</div> */}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
 function GalleryPage({ ids, onItemClick }, ref) {
     return (<>
-        <div className="gallery-space">
-            <p>L’univers est en expansion,</p>
-            <p>nous aussi</p>
-        </div>
         <div className="gallery" ref={ref}>
-            {ids.map(id => <GalleryItem key={id} id={id} onItemClick={onItemClick} />)}
+            {ids.map((id) => <GalleryItem key={id} id={id} onItemClick={onItemClick} />)}
         </div>
     </>);
 }

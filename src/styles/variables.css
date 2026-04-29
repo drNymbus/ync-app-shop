@@ -36,14 +36,14 @@
     --font-size-medium: 18px;
     --font-size-large: 28px;
 
-    --text-xs:   0.75rem;
-    --text-s:   0.875rem;
-    --text-base: 1rem;
-    --text-l:   1.125rem;
-    --text-xl:   1.25rem;
-    --text-2xl:  1.5rem;
-    --text-3xl:  1.875rem;
-    --text-4xl:  2.25rem;
+    --text-xs:   0.75rem;  /* 12px */
+    --text-s:   0.875rem;  /* 14px */
+    --text-base: 1rem;     /* 16px */
+    --text-l:   1.125rem;  /* 18px */
+    --text-xl:   1.25rem;  /* 20px */
+    --text-2xl:  1.5rem;   /* 24px */
+    --text-3xl:  1.875rem; /* 30px */
+    --text-4xl:  2.25rem;  /* 36px */
 
     /* === COLORS === */
     --primary-color: #c14bff;

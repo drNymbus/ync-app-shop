@@ -170,8 +170,7 @@ function App() {
     );
 
     return (
-        // <Logo content={content} />
-        <>{content}</>
+        <Logo content={content} />
     );
 
 } 

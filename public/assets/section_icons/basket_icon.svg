@@ -1,0 +1,7 @@
+<svg width="51" height="65" viewBox="0 0 51 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_383_285" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 39C1.03081e-05 53.0833 11.4167 64.5 25.5 64.5C39.5833 64.5 51 53.0833 51 39L0 39Z"/>
+</mask>
+<path d="M0 39L-3.7399e-07 38L-1 38L-1 39L0 39ZM51 39H52V38L51 38V39ZM25.5 63.5C11.969 63.5 1.00001 52.531 1 39L-1 39C-0.999989 53.6356 10.8645 65.5 25.5 65.5V63.5ZM50 39C50 52.531 39.031 63.5 25.5 63.5V65.5C40.1355 65.5 52 53.6355 52 39H50ZM51 38L-3.7399e-07 38L3.7399e-07 40L51 40V38Z" fill="black" mask="url(#path-1-inside-1_383_285)"/>
+<rect x="0.5" y="0.5" width="50" height="64" stroke="black"/>
+</svg>

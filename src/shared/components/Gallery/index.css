@@ -1,42 +1,37 @@
 /* ================================
 GALERIE PRINCIPALE
 ================================ */
-.gallery-space {
-    text-align: center;
-    padding-top: 15vh;
-    padding-bottom: 10vh
-}
-
 .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
+    gap: 1rem;
 }
 
 .gallery-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border: 1px solid var(--background-color);
+    align-items: stretch;
+    cursor: pointer;
 }
-.gallery-item:hover {
-    animation: hoverItem var(--transition-slow) forwards;
-}
-@keyframes hoverItem {
-    100% { border: 1px solid var(--primary-color); }
+
+.gallery-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery-wrapper img {
+    display: block;
     object-fit: cover;
-    width: calc(var(--gallery-width) / 4);
-    height: calc(var(--gallery-width) / 4);
+    width: 100%;
+    aspect-ratio: 1 / 1;
 }
 
 .gallery-description {
     display: flex;
     flex-direction: column;
-    margin-left: .5vw;
-    margin-right: .5vw;
+    padding: 0.5rem 0.75rem;
 }
 
 .gallery-title {
@@ -46,15 +41,18 @@ GALERIE PRINCIPALE
 .gallery-name {
     font-weight: bold;
 }
+.gallery-name::before {
+    content: '■';
+    margin-right: 0.4rem;
+    font-size: var(--text-xs);
+    vertical-align: 0.15em;
+}
 .gallery-price {
     color: var(--primary-color);
 }
 .gallery-label {
+    font-size: var(--text-xs);
     opacity: var(--opacity-muted);
-}
-.gallery-note {
-    font-style: italic;
-    text-align: center;
 }
 
 /* ================================
@@ -64,10 +62,5 @@ RESPONSIVE DESIGN
     .gallery {
         grid-template-columns: 1fr 1fr;
         font-size: var(--font-size-small);
-    }
-
-    .gallery-item img {
-        width: calc(var(--gallery-width) / 2);
-        height: calc(var(--gallery-width) / 2);
     }
 }
