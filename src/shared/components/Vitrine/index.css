@@ -60,6 +60,8 @@
 
     width: 80%;
 
+    font-family: "IBM Plex Mono", monospace;
+    text-transform: uppercase;
     line-height: 1.5;
 }
 
@@ -78,7 +80,7 @@
 .item-description p {
     margin: 0;
     margin-left: 3%;
-    font-size: var(--text-base);
+    font-size: var(--text-s);
 }
 
 @keyframes expandFromLeft {

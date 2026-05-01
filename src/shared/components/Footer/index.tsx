@@ -8,7 +8,7 @@ import './index.css';
 function Footer( {onClick}) {
     return (
         <div className="footer">
-            <img src="/assets/yng_metal_logo.png" alt="ync-logo" className="gallery-logo-image" />
+            <img src={`${process.env.PUBLIC_URL}/assets/logo_ync.png`} alt="ync-logo" className="gallery-logo-image" />
             <div className="footer-text">
                 <p>
                     Nous préparons de nouveaux articles et designs exclusifs.

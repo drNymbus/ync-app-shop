@@ -15,6 +15,7 @@
 
 .header-inner {
     display: flex;
+    position: relative;
 
     width: calc(var(--header-width) - var(--header-margin) * 2);
     height: calc(var(--header-height) - var(--header-margin) * 2);
@@ -28,6 +29,16 @@
 
     animation: fadeInUpApp var(--transition-slow) both;
     animation-delay: var(--content-reveal);
+}
+
+.header-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    pointer-events: none;
 }
 
 .header button {

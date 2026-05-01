@@ -29,16 +29,14 @@ GALERIE PRINCIPALE
 }
 
 .gallery-description {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 0.5rem 0.75rem;
 }
 
-.gallery-title {
-    display: flex;
-    justify-content: space-between;
-}
 .gallery-name {
+    font-family: "IBM Plex Mono", monospace;
     font-weight: bold;
 }
 .gallery-name::before {
@@ -47,12 +45,24 @@ GALERIE PRINCIPALE
     font-size: var(--text-xs);
     vertical-align: 0.15em;
 }
-.gallery-price {
-    color: var(--primary-color);
-}
 .gallery-label {
+    position: relative;
     font-size: var(--text-xs);
+    overflow: visible;
+}
+.gallery-subtitle {
+    font-family: "IBM Plex Mono", monospace;
     opacity: var(--opacity-muted);
+}
+.gallery-price {
+    position: absolute;
+    right: 0;
+    font-size: var(--text-2xl);
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* ================================

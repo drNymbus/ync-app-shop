@@ -31,13 +31,12 @@ function GalleryItem({ id, onItemClick }) {
             <div className="gallery-wrapper">
                 <img src={item.images[0]} alt="Article"/>
                 <div className="gallery-description">
-                    <div className="gallery-title">
-                        <div className="gallery-name">{item.title}</div>
-                        <div className="gallery-price">{item.price}€</div>
-                    </div>
-                    <div className="gallery-label">{item.subtitle}</div>
+                    <div className="gallery-name">{item.title}</div>
+                    <div className="gallery-subtitle">{item.subtitle}</div>
+                    <div className="gallery-price">{item.price}€</div>
                     {/* <div className="gallery-note">{item.quote}</div> */}
                 </div>
+                
             </div>
         </motion.div>
     );

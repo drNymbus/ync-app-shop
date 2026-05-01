@@ -22,6 +22,7 @@ function Header({name, basket, homeFn, aboutFn, basketFn}) {
         <div className="header">
             <div className="header-inner">
                 <button className="header-left" onClick={homeFn}>YNC SHOP</button>
+                <img src={`${process.env.PUBLIC_URL}/assets/logo_ync.png`} alt="ync-logo" className="header-logo" />
                 <div className="header-right">
                     <button className="butt-right1" onClick={aboutFn}>À PROPOS</button>
                     <button className="butt-right" onClick={basketFn}>{display_name}</button>
